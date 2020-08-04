@@ -1,0 +1,100 @@
+.register-container {
+  min-height: 100vh;
+  background-color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .register-card {
+    width: 540px;
+    min-height: 760px;
+    margin-top: 80px;
+    margin-bottom: 145px;
+    padding: 40px 80px;
+    background-color: #fff;
+    box-shadow: 0px 0px 40px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+
+    .title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 37px;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 40px;
+    }
+
+    .punya-akun {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      .btn {
+        margin: 0;
+        padding-left: 2px;
+        .text {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .atau {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+
+      div {
+        flex: 1;
+        height: 1px;
+        background-color: #dadada;
+        &:nth-child(2) {
+          flex: 0;
+          padding: 0 18px;
+          height: auto;
+          background-color: transparent;
+          font-family: Roboto;
+          font-style: italic;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .with-google {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 24px auto 0;
+      .btn {
+        width: 280px;
+        padding: 20px 50px 20px 25px;
+        background-color: #f9fcff;
+        border: 1px solid #a2adbf;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+
+        span {
+          margin-left: 40px;
+        }
+
+        &:hover {
+          background-color: #ecf6fd;
+        }
+      }
+    }
+  }
+}

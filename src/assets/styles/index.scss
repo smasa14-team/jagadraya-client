@@ -5,7 +5,9 @@ html {
   height: 100%;
 }
 
-body {
+body > div#root {
+  height: inherit;
+  width: inherit;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -13,4 +15,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./App.scss";
