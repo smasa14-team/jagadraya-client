@@ -1,5 +1,14 @@
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
+
+  //* COMPONENTS
+  @import "./components/button";
+  @import "./components/checkbox";
+
+  //* PAGES
+  @import "./pages/register";
 }
 
 .App-logo {

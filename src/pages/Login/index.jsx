@@ -1,11 +1,11 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
 
-export default function Register() {
+export default function Login() {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1>REGISTER</h1>
+      <h1>Login</h1>
     </header>
   );
 }

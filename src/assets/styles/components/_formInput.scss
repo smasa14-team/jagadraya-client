@@ -1,0 +1,78 @@
+.custom-input {
+  .form-group {
+    margin-bottom: 24px;
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    background-color: rgba(240, 247, 253, 0.5);
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.16px;
+      margin: 5px 0;
+      > span {
+        position: relative;
+        top: 0;
+        left: 1px;
+        color: red;
+      }
+    }
+
+    .input-group {
+      padding-left: 24px;
+
+      .input-group-prepend,
+      .input-group-append {
+        height: 32px;
+        span {
+          display: inline-block;
+          font-size: 14px;
+          line-height: 1.25;
+          border-color: transparent;
+        }
+      }
+
+      input {
+        color: #000;
+        margin: 0;
+        font-size: 14px;
+        min-height: 48px;
+        background-color: transparent;
+        border-color: transparent;
+
+        &::placeholder {
+          color: #919191;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+      textarea {
+        padding: 6px 10px;
+        min-height: 32px;
+        font-size: 14px;
+        border-color: transparent;
+
+        &::placeholder {
+          color: #605e5c;
+          padding-top: 2px;
+          padding-left: 3px;
+          font-size: 14px;
+        }
+
+        &:focus {
+          border-color: #a19f9d;
+          box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
