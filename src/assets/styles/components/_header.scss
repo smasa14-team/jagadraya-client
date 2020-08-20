@@ -1,0 +1,100 @@
+/* color variable */
+$mid-blue: #409BE1;
+$mid-grey: #96A4AE;
+$white   : #FFFFFF;
+
+/** Header Section **/
+.header {
+  .navbar {
+    background-color: #ffffff !important;
+
+    .navbar-brand {
+      padding     : 0;
+      margin-right: 30px;
+      color       : black;
+    }
+
+    .bg-light {
+      background-color: #ffffff !important;
+    }
+
+    .navbar-toggler {
+      outline: none;
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      right   : 7%;
+
+      .nav-link {
+        padding      : 9px 0;
+        margin       : 0 20px;
+        font-size    : 0.875rem;
+        line-height: 1rem;
+        border-radius: 0;
+        color        : #000000;
+        display      : inline-block;
+      }
+      .login-Btn {
+        margin-left: 20px;
+        background-color: $mid-blue;
+        border-radius   : 6px;
+        width           : 128px;
+        color           : $white;
+        &:hover {
+          background-color: #106ebe;
+        }
+      }
+      
+      .register-Btn {
+        margin: 0;
+        background-color: $white;
+        border-radius   : 6px;
+        border: 1px solid $mid-blue ;
+        width           : 128px;
+        color           : $mid-blue;
+        &:hover {
+          text-decoration: underline solid $mid-blue;
+        }
+      }
+    }
+  }
+}
+
+/** Media Queries **/
+@media only screen and (max-width: 1199px) {
+  .navbar-collapse {
+    right: 2.5% !important;
+  }
+
+  .navbar {
+    padding: 20px 50px;
+  }
+
+  .footer {
+    padding: 45px 50px 25px 50px;
+  }
+
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-collapse {
+    position: relative !important;
+    right   : 0 !important;
+    justify-content: flex-start;
+
+    .nav-link {
+      margin : 0 !important;
+      padding: 16px 0 !important;
+    }
+
+    .login-Btn {
+      background-color: transparent !important;
+      border-radius   : 0 !important;
+      box-shadow      : none !important;
+      color           : #22283d !important;
+      text-align      : left !important;
+    }
+  }
+
+}

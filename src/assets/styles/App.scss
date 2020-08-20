@@ -6,9 +6,12 @@
   //* COMPONENTS
   @import "./components/button";
   @import "./components/checkbox";
+  @import "./components/footer";
+  @import "./components/header";
 
   //* PAGES
   @import "./pages/register";
+  @import "./pages/homepage";
 }
 
 .App-logo {
