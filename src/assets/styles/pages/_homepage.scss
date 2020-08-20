@@ -46,11 +46,39 @@ body {
   }
 
   .articles {
-    padding: 24px 160px 0px 160px;
+    padding: 60px 160px 0px 160px;
 
-    h2 {
-      font-size  : 1.125rem;
-      font-weight: bold;
+    .items-container {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+
+      h2 {
+        font-size  : 1.125rem;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size  : 0.825rem;
+        font-weight: bold;
+        color      : $mid-blue;
+      }
+
+    }
+
+    .question-box {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 20;
+      p {
+        font-size  : 1.25rem;
+        font-weight: bold;
+        margin: 0;
+      }
+
     }
 
   }
@@ -183,7 +211,7 @@ body {
 @media only screen and (max-width:768px) {
   body {
     .articles {
-      padding: 24px 20px 0px 20px;
+      padding: 60px 20px 0px 20px;
     }
   }
 

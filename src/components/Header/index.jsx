@@ -55,7 +55,7 @@ class Header extends React.Component {
                 <a className="nav-link login-Btn text-center" href="#">
                   Masuk
                 </a>
-                <a className="nav-link register-Btn text-center" href="#">
+                <a className="nav-link register-Btn text-center" href="/register">
                   Daftar
                 </a>
               </li>

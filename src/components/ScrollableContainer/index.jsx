@@ -97,8 +97,6 @@ export default class ScrollableContainer extends PureComponent {
             <Card className="item" key={item}>
               <CardImg src={item.image} alt={item.title} />
               <CardBody className="cardbody">
-                {/* <audio style={{width:'200px'}} controls>
-                  <source src={item.audio} type="audio/ogg" /></audio> */}
                 <CardTitle>{item.title}</CardTitle>
                 <div className="item-detail">
                   <span className="item-date ">
