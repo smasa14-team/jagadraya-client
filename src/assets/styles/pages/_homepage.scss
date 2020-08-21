@@ -1,0 +1,224 @@
+/* color variable */
+$mid-blue: #409BE1;
+$mid-grey: #96A4AE;
+$white   : #FFFFFF;
+$yellow  : #E3A70A;
+
+/* body */
+body {
+  .box {
+    background-color: #065446;
+    width           : 100%;
+    height          : 372px;
+    display         : flex;
+    align-items     : center;
+    justify-content : flex-end;
+
+    .detail-box {
+      padding-right : 10rem;
+      text-align    : end;
+      flex-direction: column;
+      align-items   : flex-end;
+      display       : flex;
+
+      .title {
+        margin-bottom: 0;
+        font-size    : 1.5rem;
+        color        : $mid-blue;
+      }
+
+      .description {
+        max-width: 600px;
+        font-size: 1.5rem;
+        color    : $white;
+      }
+
+      .detail-btn {
+        padding         : 9px 0;
+        background-color: $yellow;
+        font-size       : 0.875rem;
+        border-radius   : 2px;
+        width           : 7.5rem;
+        color           : $white;
+        text-align      : center;
+      }
+    }
+  }
+
+  .articles {
+    padding: 60px 160px 0px 160px;
+
+    .items-container {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+
+      h2 {
+        font-size  : 1.125rem;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size  : 0.825rem;
+        font-weight: bold;
+        color      : $mid-blue;
+      }
+
+    }
+
+    .question-box {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 20;
+      p {
+        font-size  : 1.25rem;
+        font-weight: bold;
+        margin: 0;
+      }
+
+    }
+
+  }
+}
+
+.menu-item {
+  padding    : 0 40px;
+  margin     : 5px 10px;
+  user-select: none;
+  cursor     : pointer;
+  border     : none;
+}
+
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+
+.menu-item.active {
+  border: 1px green solid;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor : pointer;
+}
+
+.scroll-container {
+  height     : 100%;
+  width      : 100%;
+  display    : flex;
+  align-items: center;
+
+  .Btn-next {
+    display      : block;
+    position     : absolute;
+    right        : 160px;
+    width        : 48px;
+    height       : 48px;
+    padding      : 0;
+    border       : none;
+    border-radius: 50%;
+    background   : #FFFFFF;
+    box-shadow   : 0px 0px 6px 2px rgba(0, 0, 0, 0.08);
+
+    &:focus {
+      outline: 0
+    }
+  }
+
+  .item-container {
+    display           : flex;
+    overflow-x        : scroll;
+    list-style        : none;
+    padding           : 0;
+    margin            : 0;
+    // overflow  : hidden;
+    overflow-x        : scroll;
+    scrollbar-width   : none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+
+  }
+
+  .item-container::-webkit-scrollbar {
+    /* WebKit */
+    width : 0;
+    height: 0;
+  }
+
+  .item {
+    margin-right: 2.5rem;
+    max-width   : 200px;
+    flex-shrink : 0;
+
+    .cardbody {
+      padding-top   : 0;
+      padding-bottom: 0.5rem;
+
+      .item-detail {
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-between;
+        align-items    : center;
+      }
+
+      .item-date {
+        font-size: 0.6rem;
+        color    : #919191;
+      }
+
+      .checked {
+        width    : 1rem;
+        font-size: 0.8rem;
+        color    : orange;
+      }
+
+      .item-rating {
+        font-size: 0.6rem;
+        color    : #000000;
+      }
+    }
+
+    div .card-title {
+      font-size  : 1rem;
+      font-weight: bold;
+      margin     : 0.5rem 0 0.5rem 0;
+    }
+
+    p {
+      overflow          : hidden;
+      text-overflow     : ellipsis;
+      display           : -webkit-box;
+      -webkit-line-clamp: 2;
+      /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+
+    .card-text {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .item-controls {
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width:768px) {
+  body {
+    .articles {
+      padding: 60px 20px 0px 20px;
+    }
+  }
+
+  .Btn-next {
+    position: absolute;
+    right   : 160px;
+    height  : 48px;
+  }
+
+}
