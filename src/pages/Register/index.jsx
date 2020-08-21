@@ -1,28 +1,91 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { FormGroup, Label } from "reactstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { AUTH_ONCHANGE } from "../../redux/types/auth";
 
 import GoogleLogo from "../../assets/images/google.svg";
 import { FormInput } from "../../components/FormInput";
 import { Button } from "../../components/Button";
 
 export default function Register() {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
   const [typeDate, setTypeDate] = useState(false);
   const toggleDate = () => setTypeDate(!typeDate);
   const [showPass, setShowPass] = useState(false);
   const togglePass = () => setShowPass(!showPass);
+  const [error, setError] = useState({
+    fullname: "",
+    birthdate: "",
+    email: "",
+    password: "",
+    password2: "",
+  });
 
-  const onSubmit = () => null; /**dispatch(LoginAction({ email, password })) */
+  const onSubmit = () => {
+    if (handleValidation()) {
+      return alert("Oke!");
+    } else {
+      return alert("nope.");
+    }
+  }; /**dispatch(LoginAction({ email, password })) */
   const onKeyPress = ({ key }) => key === "Enter" && null;
   /**dispatch(LoginAction({ email, password }))**/
   function onChangeValue(e) {
     let name = e.target.name;
     let value = e.target.value;
-    // dispatch({ type: AUTH_LOGIN_ONCHANGE, payload: { name, value } });
+    dispatch({ type: AUTH_ONCHANGE, payload: { name, value } });
+  }
+
+  function handleValidation() {
+    let formIsValid = true;
+    const error = {};
+
+    // FULLNAME
+    if (!auth.fullname) {
+      formIsValid = false;
+      error.fullname = "Tidak boleh kosong!";
+    } else {
+      if (!auth.fullname.match(/^[a-zA-Z]+$/)) {
+        formIsValid = false;
+        error.fullname = "Hanya boleh diisi huruf!";
+      }
+    }
+
+    // EMAIL
+    if (!auth.email) {
+      formIsValid = false;
+      error.email = "Tidak boleh kosong!";
+    } else {
+      let lastAtPos = auth.email.lastIndexOf("@");
+      let lastDotPos = auth.email.lastIndexOf(".");
+
+      if (
+        !(
+          lastAtPos < lastDotPos &&
+          lastAtPos > 0 &&
+          auth.email.indexOf("@") == -1 &&
+          lastDotPos > 2 &&
+          auth.email.length - lastDotPos > 2
+        )
+      ) {
+        formIsValid = false;
+        error.email = "Email tidak valid!";
+      }
+    }
+
+    setError(error);
+    return formIsValid;
   }
 
   return (
     <div className="register-container">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="register-card">
         <h1 className="title">Daftar</h1>
         <div className="subtitle">Pendaftar selain SMASA14 akan membutuhkan waktu konfirmasi</div>
@@ -31,6 +94,8 @@ export default function Register() {
           onChange={onChangeValue}
           onKeyPress={onKeyPress}
           placeholder="Nama Lengkap"
+          invalid={error.fullname.length > 0}
+          errorMsg={error.fullname}
           type="text"
           name="fullname"
         />
@@ -47,6 +112,8 @@ export default function Register() {
           onChange={onChangeValue}
           onKeyPress={onKeyPress}
           placeholder="Alamat Email"
+          invalid={error.email.length > 0}
+          errorMsg={error.email}
           type="email"
           name="email"
         />
@@ -71,7 +138,16 @@ export default function Register() {
 
         <FormGroup id="login-checkbox">
           <Label className="custom checkbox">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={auth.checkbox}
+              onChange={() =>
+                dispatch({
+                  type: AUTH_ONCHANGE,
+                  payload: { name: "checkbox", value: !auth.checkbox },
+                })
+              }
+            />
             <span className="checkmark login" />
             <span className="checklabel">
               Dengan ini saya meyakini bahwa data yang saya masukkan adalah benar
@@ -79,15 +155,19 @@ export default function Register() {
           </Label>
         </FormGroup>
 
-        <Button style={{ marginTop: 32, marginBottom: 24 }} block theme="primary">
+        <Button
+          onClick={onSubmit}
+          style={{ marginTop: 32, marginBottom: 24 }}
+          block
+          theme="primary">
           Daftar
         </Button>
 
-        <div className="punya-akun">
+        {/* <div className="punya-akun">
           Sudah punya akun? <Button theme="link">Masuk</Button>
-        </div>
+        </div> */}
 
-        <div className="atau">
+        {/* <div className="atau">
           <div />
           <div>atau</div>
           <div />
@@ -100,7 +180,7 @@ export default function Register() {
             <img src={GoogleLogo} alt="logo" />
             <span>Sign in with Google</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

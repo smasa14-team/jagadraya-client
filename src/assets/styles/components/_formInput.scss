@@ -1,9 +1,7 @@
 .custom-input {
   .form-group {
     margin-bottom: 24px;
-    border: 1px solid #c4c4c4;
     border-radius: 6px;
-    background-color: rgba(240, 247, 253, 0.5);
 
     label {
       font-size: 14px;
@@ -20,7 +18,9 @@
     }
 
     .input-group {
-      padding-left: 24px;
+      border: 1px solid #c4c4c4;
+      border-radius: 6px;
+      background-color: rgba(240, 247, 253, 0.5);
 
       .input-group-prepend,
       .input-group-append {
@@ -40,6 +40,7 @@
         min-height: 48px;
         background-color: transparent;
         border-color: transparent;
+        padding-left: 24px;
 
         &::placeholder {
           color: #919191;
@@ -73,6 +74,11 @@
           outline: none;
         }
       }
+    }
+
+    .invalid-feedback {
+      display: block;
+      text-align: left;
     }
   }
 }

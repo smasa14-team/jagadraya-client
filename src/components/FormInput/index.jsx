@@ -10,6 +10,7 @@ export const FormInput = ({
   label,
   required,
   invalid,
+  errorMsg,
   rows,
   type,
   name,
@@ -85,6 +86,7 @@ export const FormInput = ({
           )}
           {append ? <InputGroupAddon addonType="append">{append}</InputGroupAddon> : null}
         </InputGroup>
+        {invalid ? <div className="invalid-feedback">{errorMsg}</div> : null}
         {counter ? <TextCounter text={textCount} maxCount={maxLength} /> : null}
       </FormGroup>
     </div>
