@@ -1,5 +1,6 @@
 {
   "name": "jagadraya-client",
+  "homepage": "https://jagadraya.site/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
