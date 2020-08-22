@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 class Footer extends React.Component {
@@ -38,7 +39,6 @@ class Footer extends React.Component {
                           Tentang Jagad Raya
                         </a>
                       </li>
-
                     </ul>
                   </div>
                   <div className="col-lg-3 col-sm-6">
@@ -64,7 +64,6 @@ class Footer extends React.Component {
                           Rekaman Kegiatan
                         </a>
                       </li>
-
                     </ul>
                   </div>
                 </div>

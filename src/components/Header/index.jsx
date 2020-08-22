@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import logo from "../../assets/images/logo-smasa.png";
 
@@ -5,10 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <nav
-          color="white"
-          className="navbar navbar-expand-lg navbar-light bg-light"
-        >
+        <nav color="white" className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="#">
             <img
               src={logo}
@@ -25,8 +23,7 @@ class Header extends React.Component {
             data-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
